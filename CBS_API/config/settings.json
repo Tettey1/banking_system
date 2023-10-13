@@ -1,0 +1,132 @@
+{
+	"email": {
+		"email_host": "smtp.gmail.com",
+		"email_port": "587",
+		"email_user": "noreply@mesika.org",
+		"email_password": ""
+	},
+	"security": {
+		"allowed_hosts": ["localhost", "127.0.0.1", "0.0.0.0", "192.168.68.12"]
+	},
+	"celery": {
+		"default_retry_delay": 30,
+		"max_retries": 3,
+		"interval_start": 0,
+		"interval_step": 0.2,
+		"interval_max": 0.2,
+		"routing_key": "cbs",
+		"exchange": "cbs",
+		"queue": "cbs"
+	},
+	"rabbitmq": {
+		"rabbitmq_vhost": "cbs",
+		"rabbitmq_host": "localhost",
+		"rabbitmq_password": "backend",
+		"rabbitmq_port": 5672,
+		"rabbitmq_user": "cbs"
+	},
+	"redis": {
+		"redis_user": "dominic",
+		"redis_password": "password",
+		"redis_host": "localhost",
+		"redis_port": "6379"
+	},
+	"db": {
+		"default": {
+			"db_name": "alert",
+			"db_host": "alert",
+			"db_user": "5432",
+			"db_password": "password",
+			"db_port": 5432,
+			"conn_max": 1,
+			"conn_health_checks": 1
+		},
+		"auth": {
+			"db_name": "staff",
+			"db_host": "localhost",
+			"db_user": "auth_user",
+			"db_password": "password",
+			"db_port": 5432,
+			"conn_max": 1,
+			"conn_health_checks": 1
+		}
+	},
+	"secret_key": "%%-)%!@@5-d)%mti+w)f9%%1#^o-0%lf8j@+h+)ezu(l74xzm$",
+	"rbac_data": {
+        "roles": {
+
+            "MANAGER": {
+                "perms": {
+                    "view": {
+                        "allowed": true
+                    },
+                    "edit": {
+                        "allowed": true
+                    },
+                    "delete": {
+                        "allowed": true
+                    },
+                    "add_customer": {
+                        "allowed": true
+                    },
+                    "list": {
+                        "allowed": true
+                    },
+                    "transaction": {
+                        "allowed": true
+                    }
+                }
+            },
+            "IT_MANAGER": {
+                "perms": {
+                    "view": {
+                        "allowed": true
+                    },
+                    "edit": {
+                        "allowed": true
+                    },
+                    "delete": {
+                        "allowed": true
+                    },
+                    "add_user": {
+                        "allowed": true
+                    },
+                    "add_role": {
+                        "allowed": true
+                    },
+                    "add_permission": {
+                        "allowed": true
+                    },
+                    "add": {
+                        "allowed": true
+                    },
+                    "list": {
+                        "allowed": true
+                    }
+                }
+            },
+            "TELLER": {
+                "perms": {
+                    "view": {
+                        "allowed": true
+                    },
+                    "list": {
+                        "allowed": true
+                    },
+                    "edit": {
+                        "allowed": true
+                    },
+                    "delete": {
+                        "allowed": true
+                    },
+                    "add_customer": {
+                        "allowed": true
+                    },
+                    "transaction": {
+                        "allowed": true
+                    }
+                }
+            }
+        }
+    }
+}
